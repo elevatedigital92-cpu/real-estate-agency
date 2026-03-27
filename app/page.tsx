@@ -417,7 +417,17 @@ function FeaturedProperties() {
   );
 }
 
-function PropertyCard({ property }) {
+type Property = {
+  id: number;
+  title: string;
+  location: string;
+  badge: string;
+  details: string;
+  price: string;
+  image: string;
+};
+
+function PropertyCard({ property }: { property: Property }) {
   return (
     <div
       className="overflow-hidden rounded-3xl border transition hover:-translate-y-1"
@@ -466,7 +476,7 @@ function PropertyCard({ property }) {
             className="text-2xl font-extrabold"
             style={{ color: "var(--secondary)" }}
           >
-            {property.price}
+            {property.price}  
           </p>
 
           <button
